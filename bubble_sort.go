@@ -3,6 +3,7 @@ package main
 // Sorts given slice by iterating through all elements and comparing neighbors,
 // swapping them if they're not in the right order. Algorithm will iterate until array is sorted,
 // omitting last elements as they're guaranteed to be sorted
+// Time complexity O(n^2)
 func bubble_sort(arr []int) {
 	j := 0
 	for j < len(arr)-1 {

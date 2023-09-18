@@ -1,15 +1,20 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestInsertionSort(t *testing.T) {
-	arr := []int{-1, 5, 6, 2, 4, 3, 2, 1}
+	for _, test := range tests{
+		tmp :=  make([]int, len(test.have))
+		copy(tmp, test.have)
 
-	fmt.Printf("before sorting: %+v \n", arr)
-	insertion_sort(arr)
-	fmt.Printf("after sorting: %+v \n", arr)
+		insertion_sort(tmp)
+		for i:=0; i < len(tmp); i++ {
+			if test.want[i] != tmp[i]{
+				t.FailNow()
+			}
+		}
+	}
 
 }
