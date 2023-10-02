@@ -8,7 +8,7 @@ func MergeSort(arr []int) []int {
 	left := arr[0:mid]
 	right := arr[mid:]
 
-	return merge(MergeSort(left), mergeSort(right))
+	return merge(MergeSort(left), MergeSort(right))
 }
 
 func merge(arr1 []int, arr2 []int) []int {
